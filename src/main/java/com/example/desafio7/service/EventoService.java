@@ -61,11 +61,10 @@ public class EventoService {
         StatusEvento mudaStatus = new StatusEvento();
         Evento mudaEvento = new Evento();
         mudaEvento = findById(id);
-        mudaStatus.setIdEventoStatus(status);
+        mudaStatus.setIdeventostatus(status);
         mudaEvento.setStatusevento(mudaStatus);
         return eventoRepository.save(mudaEvento);
     }
 
 }
-
 

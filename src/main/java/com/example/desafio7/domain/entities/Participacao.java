@@ -15,23 +15,24 @@ import lombok.Data;
 public class Participacao {
 
     @Id
+    @Column (name = "idparticipacao")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer IdParticipacao;
+    private Integer idparticipacao;
 
     @JoinColumn (name = "IdEvento", nullable = false)
     @ManyToOne
     private Evento evento;
 
-    @Column(nullable = false, length = 250)
-    private String LoginParticipante;
+    @Column(name = "LoginParticipante", nullable = false, length = 250)
+    private String loginparticipante;
 
-    @Column(nullable = false, length = 250)
-    private Boolean FlagPresente;
+    @Column(name = "FlagPresente", nullable = false, length = 250)
+    private Boolean flagpresente;
 
-    @Column(nullable = true)
-    private Integer Nota;
+    @Column(name = "Nota", nullable = true)
+    private Integer nota;
 
-    @Column(nullable = true, length = 1000)
-    private String Comentario;
+    @Column(name = "Comentario", nullable = true, length = 1000)
+    private String comentario;
 
 } 

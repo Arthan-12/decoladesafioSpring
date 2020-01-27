@@ -18,28 +18,28 @@ import lombok.NoArgsConstructor;
 @Builder
 public class EventoCreateRequest {
 
-    @NotEmpty(message = "Campo obrigatório")
-    private String Nome;
+    @NotEmpty( message = "Campo obrigatório")
+    private String nome;
 
     @NotNull
-    private Integer IdCategoriaEvento;
-
-    @NotNull
-    //@NotEmpty(message = "Data obrigatória")
-    private Date DataHoraInicio;
+    private Integer idcategoriaevento;
 
     @NotNull
     //@NotEmpty(message = "Data obrigatória")
-    private Date DataHoraFim;
+    private Date datahorainicio;
+
+    @NotNull
+    //@NotEmpty(message = "Data obrigatória")
+    private Date datahorafim;
 
     @NotEmpty(message = "Local obrigatório")
     @Size( max = 250)
-    private String Local;
+    private String local;
 
     @NotEmpty(message = "Descrição obrigatória")
     @Size( max = 1000)
-    private String Descricao;
+    private String descricao;
 
     @NotNull(message = "Campo obrigatório")
-    private Integer LimiteVagas;
+    private Integer limitevagas;
 }

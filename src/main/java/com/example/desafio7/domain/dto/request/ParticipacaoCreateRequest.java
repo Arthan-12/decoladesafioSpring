@@ -16,15 +16,15 @@ import lombok.NoArgsConstructor;
 public class ParticipacaoCreateRequest {
 
     @NotNull
-    private Integer IdEvento;
+    private Integer idevento;
 
     @NotEmpty(message = "Campo obrigatório")
-    private String LoginParticipante;
+    private String loginparticipante;
 
     @NotNull
-    private Boolean FlagPresente;
+    private Boolean flagpresente;
 
-    private Integer Nota;
+    private Integer nota;
 
-    private String Comentário;
+    private String comentário;
 }

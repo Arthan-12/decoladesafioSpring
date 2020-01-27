@@ -28,7 +28,7 @@ public class ParticipacaoMapper {
         Participacao participacao = mapper.map(input, Participacao.class);
 
         Evento evento = new Evento();
-        evento.setIdEvento(input.getIdEvento());
+        evento.setIdevento(input.getIdevento());
          participacao.setEvento(evento);
  
         return participacao;

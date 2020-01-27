@@ -6,17 +6,24 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @Entity
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class CategoriaEvento {
 
     @Id
+    @Column(name = "IdCategoriaEvento")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer IdCategoriaEvento;
+    private Integer idcategoriaevento;
 
-    @Column(nullable = false, length = 250)
-    private String NomeCategoria;
+    @Column(name = "NomeCategoria", nullable = false, length = 250)
+    private String nomecategoria;
 
 } 

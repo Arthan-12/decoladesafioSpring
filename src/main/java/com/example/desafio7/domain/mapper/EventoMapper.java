@@ -2,6 +2,7 @@ package com.example.desafio7.domain.mapper;
 
 import com.example.desafio7.domain.dto.request.EventoCreateRequest;
 import com.example.desafio7.domain.dto.response.EventoResponse;
+import com.example.desafio7.domain.dto.response.VagasEventoResponse;
 import com.example.desafio7.domain.entities.CategoriaEvento;
 import com.example.desafio7.domain.entities.Evento;
 import com.example.desafio7.domain.entities.StatusEvento;
@@ -24,18 +25,23 @@ public class EventoMapper {
         return mapper.map(input, EventoResponse.class);
     }
 
+
+    public VagasEventoResponse toDtoVagas(Evento input) {
+        return mapper.map(input, VagasEventoResponse.class);
+    }
+
     public Evento fromDto(EventoCreateRequest input) {
         
         Evento evento = mapper.map(input, Evento.class);
 
-        CategoriaEvento categoriaEvento = new CategoriaEvento();
-        categoriaEvento.setIdCategoriaEvento(input.getIdCategoriaEvento());
-         evento.setCategoriaevento(categoriaEvento);
+        CategoriaEvento categoriaevento = new CategoriaEvento();
+        categoriaevento.setIdcategoriaevento(input.getIdcategoriaevento());
+         evento.setCategoriaevento(categoriaevento);
         
  
-        StatusEvento statusEvento = new StatusEvento();
-        statusEvento.setIdEventoStatus(1);
-        evento.setStatusevento(statusEvento);
+        StatusEvento statusevento = new StatusEvento();
+        statusevento.setIdeventostatus(1);
+        evento.setStatusevento(statusevento);
  
  
         return evento;

@@ -16,9 +16,10 @@ import lombok.Data;
 @Entity
 public class Evento {
 
-    @Id
+    @Id 
+    @Column (name = "IdEvento")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer IdEvento;
+    private Integer idevento;
 
     @JoinColumn (name = "IdEventoStatus", nullable = false)
     @ManyToOne
@@ -28,23 +29,23 @@ public class Evento {
     @ManyToOne
     private CategoriaEvento categoriaevento;
 
-    @Column(nullable = false, length = 250)
-    private String Nome;
+    @Column(name = "Nome", nullable = false, length = 250)
+    private String nome;
 
-    @Column(nullable = false, length = 250)
-    private Date DataHoraInicio;
+    @Column(name = "DataHoraInicio", nullable = false, length = 250)
+    private Date datahorainicio;
 
-    @Column(nullable = false, length = 250)
-    private Date DataHoraFim;
+    @Column(name = "DataHoraFim", nullable = false, length = 250)
+    private Date datahorafim;
 
-    @Column(nullable = false, length = 250)
-    private String Local;
+    @Column(name = "Local", nullable = false, length = 250)
+    private String local;
 
-    @Column(nullable = false, length = 1000)
-    private String Descricao;
+    @Column(name = "Descricao", nullable = false, length = 1000)
+    private String descricao;
 
-    @Column(nullable = false)
-    private Integer LimiteVagas;
+    @Column(name = "LimiteVagas", nullable = false)
+    private Integer limitevagas;
 
 
 } 

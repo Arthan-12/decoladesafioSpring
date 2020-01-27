@@ -12,8 +12,8 @@ public class DataHoraValidator implements ConstraintValidator<DataHora, EventoCr
 
     @Override
     public boolean isValid(EventoCreateRequest value, ConstraintValidatorContext context) {
-        Long timeInicio = value.getDataHoraInicio().getTime();
-        Long timeFim = value.getDataHoraFim().getTime();
+        Long timeInicio = value.getDatahorainicio().getTime();
+        Long timeFim = value.getDatahorafim().getTime();
         Long dataevento = timeFim - timeInicio;
  
         if(dataevento <= 0) return false;
@@ -22,8 +22,8 @@ public class DataHoraValidator implements ConstraintValidator<DataHora, EventoCr
         Calendar inicio = Calendar.getInstance();
         Calendar fim = Calendar.getInstance();
  
-        inicio.setTime(value.getDataHoraInicio());
-        fim.setTime(value.getDataHoraFim());
+        inicio.setTime(value.getDatahorainicio());
+        fim.setTime(value.getDatahorafim());
  
         if(inicio.get(Calendar.DAY_OF_MONTH) != fim.get(Calendar.DAY_OF_MONTH)) return false;
         if(inicio.get(Calendar.MONTH) != fim.get(Calendar.MONTH)) return false;

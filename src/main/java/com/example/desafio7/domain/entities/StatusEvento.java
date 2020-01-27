@@ -13,10 +13,11 @@ import lombok.Data;
 public class StatusEvento {
 
     @Id
+    @Column (name = "IdEventoStatus")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer IdEventoStatus;
+    private Integer ideventostatus;
 
-    @Column(nullable = false, length = 250)
-    private String NomeStatus;
+    @Column(name = "NomeStatus", nullable = false, length = 250)
+    private String nomestatus;
 
 } 

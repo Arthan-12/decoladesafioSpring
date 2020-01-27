@@ -15,6 +15,6 @@ import lombok.NoArgsConstructor;
 public class CategoriaEventoCreateRequest {
 
     @NotEmpty(message = "Campo obrigatório")
-    private String NomeCategoria;
+    private String nomecategoria;
 
 }

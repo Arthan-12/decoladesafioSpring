@@ -44,10 +44,6 @@ public class ParticipacaoService {
 	}
 
 
-
-    public  List<String> listDistinct() {
-        return participacaoRepository.listDistinct();
-    }
 }
 
 

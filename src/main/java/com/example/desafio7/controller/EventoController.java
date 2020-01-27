@@ -23,7 +23,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.PostMapping;
 
 @RestController
-@RequestMapping("/ evento")
+@RequestMapping("/evento")
 public class EventoController {
 
 	private final EventoService eventoService;
@@ -63,37 +63,37 @@ public class EventoController {
     
     @PutMapping
 	public ResponseEntity<EventoResponse> put(@Valid @RequestBody Evento evento) {
-		if(eventoService.findById(evento.getIdEvento())!= null){
+		if(eventoService.findById(evento.getIdevento())!= null){
             evento = eventoService.updateUser(evento);
         }
     return ResponseEntity.ok(mapper.toDto(evento));
 	}  
 	
-	@PutMapping (value = "/{id}/ alterar evento")
+	@PutMapping (value = "/{id}/alterar")
 	public ResponseEntity<EventoResponse> eventoAndamento(@Valid @RequestBody Integer id) {
 		Evento mudaevento = new Evento();
 		mudaevento = eventoService.findById(id);
-		if(eventoService.findById(mudaevento.getIdEvento())!= null){
+		if(eventoService.findById(mudaevento.getIdevento())!= null){
             mudaevento = eventoService.eventoAndamento(id);
         }
     return ResponseEntity.ok(mapper.toDto(mudaevento));
 	}  
 	
-	@PutMapping (value = "/{id}/ concluir evento")
+	@PutMapping (value = "/{id}/concluir")
 	public ResponseEntity<EventoResponse> eventoConcluido(@Valid @RequestBody Integer id) {
 		Evento mudaevento = new Evento();
 		mudaevento = eventoService.findById(id);
-		if(eventoService.findById(mudaevento.getIdEvento())!= null){
+		if(eventoService.findById(mudaevento.getIdevento())!= null){
             mudaevento = eventoService.eventoConcluido(id);
         }
     return ResponseEntity.ok(mapper.toDto(mudaevento));
 	}  
 
-	@PutMapping (value = "/{id}/ cancelar evento")
+	@PutMapping (value = "/{id}/cancelar")
 	public ResponseEntity<EventoResponse> eventoCancelado(@Valid @RequestBody Integer id) {
 		Evento mudaevento = new Evento();
 		mudaevento = eventoService.findById(id);
-		if(eventoService.findById(mudaevento.getIdEvento())!= null){
+		if(eventoService.findById(mudaevento.getIdevento())!= null){
             mudaevento = eventoService.eventoCancelado(id);
         }
     return ResponseEntity.ok(mapper.toDto(mudaevento));

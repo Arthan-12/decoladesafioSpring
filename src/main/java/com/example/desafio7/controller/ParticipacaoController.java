@@ -23,7 +23,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.PostMapping;
 
 @RestController
-@RequestMapping("/ participacao")
+@RequestMapping("/participacao")
 public class ParticipacaoController {
 
 	private final ParticipacaoService participacaoService;
@@ -46,11 +46,6 @@ public class ParticipacaoController {
 				.collect(Collectors.toList()));
 	}	
 
-	@GetMapping(value = "/distinct")
-	public ResponseEntity<List<String>> listDistinct() {
-        return ResponseEntity.ok(participacaoService.listDistinct());
-        
-    }
     
     @PostMapping
 	public ResponseEntity<ParticipacaoResponse> post(@Valid @RequestBody ParticipacaoCreateRequest model) {
@@ -68,7 +63,7 @@ public class ParticipacaoController {
     
     @PutMapping
 	public ResponseEntity<ParticipacaoResponse> put(@Valid @RequestBody Participacao participacao) {
-		if(participacaoService.findById(participacao.getIdParticipacao())!= null){
+		if(participacaoService.findById(participacao.getIdparticipacao())!= null){
             participacao = participacaoService.updateUser(participacao);
         }
     return ResponseEntity.ok(mapper.toDto(participacao));
